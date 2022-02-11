@@ -64,6 +64,5 @@ class TestProblem(unittest.TestCase):
         self.assertEqual(avg_num(), '4 - Среднее')
 
 
-
 if __name__ == '__main__':
     unittest.main()
