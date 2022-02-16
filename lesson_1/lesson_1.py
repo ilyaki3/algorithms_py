@@ -55,6 +55,7 @@ def equation():
 
 # print(equation())
 
+
 """
 4. Написать программу, которая генерирует в указанных пользователем границах:
     случайное целое число;
@@ -83,6 +84,8 @@ def generate():
         return random.randint(int(limit_from), int(limit_to))
     elif gen_mode == 'f':
         return round(random.uniform(int(limit_from), int(limit_to)), 3)
+
+# generate()
 
 
 """
@@ -167,7 +170,7 @@ def avg_num():
         return f'{num_1} - Среднее'
     if num_1 < num_2 < num_3 or num_1 > num_2 > num_3:
         return f'{num_2} - Среднее'
-    if num_2 < num_3 < num_1 or num_2 > num_3 > num_1:
+    else:
         return f'{num_3} - Среднее'
 
 #     nums = list(set(map(int, user_input.split())))
