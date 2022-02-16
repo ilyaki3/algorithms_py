@@ -146,7 +146,7 @@ def triangle():
 def is_leap_year():
     year = int(input('Введите год:\n>>> '))
 
-    if year % 4 == 0 or year % 400 == 0:
+    if year % 400 == 0 or year % 4 == 0 and year % 100 != 0:
         return f'{year} - Год високосный'
     else:
         return f'{year} - Год не високосный'
