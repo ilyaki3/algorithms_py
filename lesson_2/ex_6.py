@@ -1,43 +1,25 @@
 """
-    В программе генерируется случайное целое число от 0 до 100. Пользователь должен его отгадать
-    не более чем за 10 попыток. После каждой неудачной попытки должно сообщаться больше или меньше
-    введенное пользователем число, чем то, что загадано. Если за 10 попыток число не отгадано,
-    то вывести загаданное число.randint(0,100)
+    Среди натуральных чисел, которые были введены, найти наибольшее по сумме цифр.
+    Вывести на экран это число и сумму его цифр.
 """
 
 
-from random import randint
+def max_digit_sum(n: str) -> None:
+    numbers = n.split()
+    digit_sum = [0] * len(numbers)
+
+    for j in range(len(numbers)):
+        for k in range(len(numbers[j])):
+            digit_sum[j] += int(numbers[j][k])
+
+    max_sum = 0
+    for i in digit_sum:
+        if max_sum < i:
+            max_sum = i
+    print(max_sum)
 
 
-def validation(text):
-    try:
-        n = int(input(text))
-        return n
-    except ValueError:
-        print('Ошибка ввода')
-        return
-
-def guess_the_number():
-    print('В программе генерируется случайное целое число от 0 до 100. '
-          'Вы должны его отгадать не более чем за 10 попыток.\n'
-          'После каждой неудачной попытки вы узнаете больше или '
-          'меньше введенное вами число, чем то, что загадано.\n')
-
-    hidden_number = randint(0,100)
-    attempts = 0
-    while True:
-        user_number = validation(('Введите число:\n>>> '))
-        if user_number == None: return
-
-        attempts += 1
-        if user_number == hidden_number:
-            print(f'\nПоздравляем! Вы отгадали число {hidden_number}\nКолличество попыток: {attempts}')
-            return
-        elif user_number < hidden_number:
-            print('Загаданное число больше.')
-        else:
-            print('Загаданное число меньше.')
-
-
-if __name__ == '__main__':
-    guess_the_number()
+if __name__=='__main__':
+    # n = input("Введите натуральные числа через пробел\n>>> ")
+    n = "2345 876 5678 9876 5678 987655 5678987 76567 9879 6765"
+    max_digit_sum(n)
