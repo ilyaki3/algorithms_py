@@ -4,9 +4,19 @@
 """
 
 
-def multiplicity():
+def multiplicity(numbers):
+    count = 0
+    for num in numbers:
+        flag = True
+        for d in range(2, 10):
+            if num % d != 0:
+                flag = False
+                break
+        if flag == True: count += 1
 
+    return count
 
 
 if __name__ == '__main__':
-    print(multiplicity())
+    numbers = (i for i in range(2, 100))
+    print(multiplicity(numbers))
