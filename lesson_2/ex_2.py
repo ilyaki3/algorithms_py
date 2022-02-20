@@ -4,15 +4,15 @@
 """
 
 
-def backward_rec(n: int) -> None:
-    if n // 10 == 0:
-        print(n % 10, end='')
-    else:
-        print(n % 10, end='')
-        backward_rec(n // 10)
+def backward_rec(n: int) -> int:
+    result = 0
+    while n != 0:
+        result = result * 10 + n % 10
+        n = n // 10
+    return result
 
 
-
-if __name__=='__main__':
+if __name__ == '__main__':
     n = int(input("Сформируем из введенного числа обратное\n>>> "))
-    backward_rec(n)
+    print(backward_rec(n))
+
