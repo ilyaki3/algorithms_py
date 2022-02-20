@@ -9,7 +9,7 @@ def backward_rec(n: int) -> None:
         print(n % 10, end='')
     else:
         print(n % 10, end='')
-        backward(n // 10)
+        backward_rec(n // 10)
 
 
 
